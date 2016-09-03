@@ -1,6 +1,5 @@
 body {
-  background-color: hsla(174,100%,41%,1);
-  color: white;
+  background-color: #f5f5f5 !important;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -74,4 +73,6 @@ div {
 
 .contents {
   margin-top: 65px;
+  background-color: white;
+  padding: 0 50px 50px 50px;
 }
