@@ -23,18 +23,26 @@
 							<li><a href="/projects/new">Propor Projeto</a></li>
 						</ul>
 						<ul class="nav navbar-nav pull-right">
-							<li>
-								<a>Logar</a>
-							</li>
-							<li>
-								<a>entrar</a>
-							</li>
+							<% if user_signed_in? %>
+								<li>
+									<a href="">usuário logado: <span style="font-weight: bold;"><%= current_user.email %></span></a>
+								</li>
+								<li>
+									<%= link_to('Sair', destroy_user_session_path, method: 'delete') %>
+								</li>
+							<% else %>
+								<li>
+									<%= link_to('Logar', user_session_path) %>
+								</li>
+							<% end %>
 						</ul>
 					</div><!--/.nav-collapse -->
 				</div><!--/.container-fluid -->
 			</div>
 		</nav>
 		<div class="contents">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
 			<%= yield %>
 		</div>
 	</div>
