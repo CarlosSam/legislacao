@@ -1,0 +1,1 @@
+json.array! @adm_politicians, partial: 'adm_politicians/adm_politician', as: :adm_politician

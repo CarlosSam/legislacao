@@ -1,0 +1,2 @@
+module Adm::PoliticiansHelper
+end

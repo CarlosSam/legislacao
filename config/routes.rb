@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :adm do
+    resources :politicians
+  end
   devise_for :users
   resources :projects
   # The priority is based upon order of creation: first created -> highest priority.
