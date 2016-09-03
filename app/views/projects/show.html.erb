@@ -1,62 +1,82 @@
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+<div class="vote-box">
+  <ul class="vote-box__stacked-list">
+    <li class="vote-btn-upvote">
+      <%= link_to(raw("<i class='fa fa-thumbs-o-up' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: true, id: @project.id}, class:(@project.user_vote(current_user) ? "upvoted" : ""), method: :post) %>
+    </li>
+    <li>
+      <ul class="vote-box__inline-list">
+        <li><span class="total-votes"><%= @project.netvotes %><span></li>
+        <li><%= @project.upvotes %><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></li>
+        <li><%= @project.downvotes %><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></li>
+      </ul>
+    </li>
+    <li class="vote-btn-downvote">
+      <%= link_to(raw("<i class='fa fa-thumbs-o-down' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: false, id: @project.id}, class:( (!@project.user_vote(current_user).nil? && !@project.user_vote(current_user)) ? "downvoted" : ""), method: :post) %>
+    </li>
+  </ul>
+</div>
+<div class="project-contents">
+  <p>
+    <strong>Name:</strong>
+    <%= @project.name %>
+  </p>
+  
+  <p>
+    <strong>City:</strong>
+    <%= @project.city %>
+  </p>
+  
+  <p>
+    <strong>State:</strong>
+    <%= @project.state %>
+  </p>
+  
+  <p>
+    <strong>Recipient:</strong>
+    <%= @project.recipient %>
+  </p>
+  
+  <p>
+    <strong>Wants:</strong>
+    <%= @project.wants %>
+  </p>
+  
+  <p>
+    <strong>Doing:</strong>
+    <%= @project.doing %>
+  </p>
+  
+  <p>
+    <strong>Impacts:</strong>
+    <%= @project.impacts %>
+  </p>
+  
+  <p>
+    <strong>Strategy:</strong>
+    <%= @project.strategy %>
+  </p>
+  
+  <p>
+    <strong>Explore:</strong>
+    <%= @project.explore %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @project.city %>
-</p>
+  <p>
+    <strong>Define:</strong>
+    <%= @project.define %>
+  </p>
+  
+  <p>
+    <strong>Causes:</strong>
+    <%= @project.causes %>
+  </p>
+  
+  <p>
+    <strong>Prototype:</strong>
+    <%= @project.prototype %>
+  </p>
+  
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
 
-<p>
-  <strong>State:</strong>
-  <%= @project.state %>
-</p>
-
-<p>
-  <strong>Recipient:</strong>
-  <%= @project.recipient %>
-</p>
-
-<p>
-  <strong>Wants:</strong>
-  <%= @project.wants %>
-</p>
-
-<p>
-  <strong>Doing:</strong>
-  <%= @project.doing %>
-</p>
-
-<p>
-  <strong>Impacts:</strong>
-  <%= @project.impacts %>
-</p>
-
-<p>
-  <strong>Strategy:</strong>
-  <%= @project.strategy %>
-</p>
-
-<p>
-  <strong>Explore:</strong>
-  <%= @project.explore %>
-</p>
-
-<p>
-  <strong>Define:</strong>
-  <%= @project.define %>
-</p>
-
-<p>
-  <strong>Causes:</strong>
-  <%= @project.causes %>
-</p>
-
-<p>
-  <strong>Prototype:</strong>
-  <%= @project.prototype %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+</div>

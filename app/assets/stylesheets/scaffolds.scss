@@ -78,4 +78,77 @@ div {
   padding: 0 50px 50px 50px;
   border-radius: 4px;
   box-shadow: 0 0 1px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.vote-box {
+    background-color: hsla(174,71%,95%,1);
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid hsla(174,100%,20%,1);
+    width: 180px;
+    float: left;
+}
+
+.vote-box__stacked-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 4rem;
+}
+
+ul.vote-box__inline-list {
+    list-style: none;
+    padding: 5px 0;
+    font-size: 3rem;
+    line-height: 40px;
+    height: 50px;
+}
+
+.vote-box__inline-list li {
+    width: 45px;
+    float: left;
+}
+
+.vote-box__inline-list li i {
+    font-size: 2rem;
+}
+
+.vote-box__inline-list li:nth-child(2) {
+    color: green;
+}
+
+.vote-box__inline-list li:nth-child(3) {
+    color: red;
+}
+
+span.total-votes {
+    font-size: 4rem;
+}
+
+.project-contents {
+    margin-left: 205px;
+}
+
+li.vote-btn-upvote i {
+    color: hsla(120,100%,25%,0.5);
+}
+
+li.vote-btn-downvote i {  
+  color: hsla(0,100%,50%,0.5);
+}
+
+.vote-box a:hover {
+  background-color: inherit;
+}
+
+.upvoted i {
+  color: hsla(120,100%,25%, 1) !important;
+  font-weight: bold;
+}
+
+.downvoted i {
+  color: hsla(0,100%,50%, 1) !important;
+  font-weight: bold;
 }

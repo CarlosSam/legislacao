@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :vote, :do_vote]
   before_action :authenticate_user!, except: [:welcome, :index, :show]
 
   def welcome
@@ -15,6 +15,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    thumbs_up = Vote.get_positive_votes(@project)
+    thumbs_donw = Vote.get_negative_votes(@project)
   end
 
   # GET /projects/new
@@ -24,6 +26,11 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+  end
+
+  def do_vote
+    Vote.vote(@project, current_user, (params[:outcome].eql?("true") ? true : false))
+    render :show
   end
 
   # POST /projects
