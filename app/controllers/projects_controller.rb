@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+  def welcome
+    render :welcome
+  end
+
   # GET /projects
   # GET /projects.json
   def index
