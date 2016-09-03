@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Recipient</th>
+      <th>Wants</th>
+      <th>Doing</th>
+      <th>Impacts</th>
+      <th>Strategy</th>
+      <th>Explore</th>
+      <th>Define</th>
+      <th>Causes</th>
+      <th>Prototype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.city %></td>
+        <td><%= project.state %></td>
+        <td><%= project.recipient %></td>
+        <td><%= project.wants %></td>
+        <td><%= project.doing %></td>
+        <td><%= project.impacts %></td>
+        <td><%= project.strategy %></td>
+        <td><%= project.explore %></td>
+        <td><%= project.define %></td>
+        <td><%= project.causes %></td>
+        <td><%= project.prototype %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>

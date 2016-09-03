@@ -1,0 +1,2 @@
+json.extract! project, :id, :name, :city, :state, :recipient, :wants, :doing, :impacts, :strategy, :explore, :define, :causes, :prototype, :created_at, :updated_at
+json.url project_url(project, format: :json)
