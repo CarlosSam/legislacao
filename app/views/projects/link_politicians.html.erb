@@ -1,0 +1,85 @@
+<div class="project-contents">
+  <h3><%= @project.name %></h3>
+
+  <hr>
+
+  <p>
+    <strong>Votos:</strong>
+    <p>
+      <ul class="vote-box__inline-list">
+        <li><span class="total-votes"><%= @project.netvotes %><span></li>
+        <li><%= @project.upvotes %><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></li>
+        <li><%= @project.downvotes %><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></li>
+      </ul>
+    </p>
+  </p>
+
+  <br>
+  <br>
+  
+  <p>
+    <strong>Cidade:</strong>
+    <%= simple_format @project.city %>
+  </p>
+
+  <br>
+  
+  <p>
+    <strong>Estado:</strong>
+    <%= simple_format @project.state %>
+  </p>
+    
+  <br>
+
+  <p>
+    <strong>Destinatário:</strong>
+    <%= simple_format @project.recipient %>
+  </p>
+
+  <br>
+  
+  <p>
+    <strong>Queremos resolver o problema:</strong>
+    <%= simple_format @project.wants %>
+  </p>
+
+  <br>
+  
+  <p>
+    <strong>Fazendo:</strong>
+    <%= simple_format @project.doing %>
+  </p>
+
+  <br>
+  
+  <p>
+    <strong>Impactando em:</strong>
+    <%= simple_format @project.impacts %>
+  </p>
+
+  <br>
+
+</div>
+
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label 'Associar Políticos' %><br>
+    <%= f.select :recipient, options_for_select(br_recipients), {}, {class: 'form-control'} %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'enviar', class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= javascript_include_tag 'projects', 'data-turbolinks-track' => true %>

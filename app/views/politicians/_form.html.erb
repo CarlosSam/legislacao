@@ -1,10 +1,10 @@
-<%= form_for(@adm_politician) do |f| %>
-  <% if @adm_politician.errors.any? %>
+<%= form_for(@politician) do |f| %>
+  <% if @politician.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@adm_politician.errors.count, "error") %> impedi(u/ram) este político de ser alterado: </h2>
+      <h2><%= pluralize(@politician.errors.count, "error") %> impedi(u/ram) este político de ser alterado: </h2>
 
       <ul>
-      <% @adm_politician.errors.full_messages.each do |message| %>
+      <% @politician.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

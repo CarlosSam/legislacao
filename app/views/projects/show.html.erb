@@ -1,13 +1,3 @@
-<div class="vote-box hidden">
-  <ul class="vote-box__stacked-list">
-    <li class="vote-btn-upvote">
-      <%= link_to(raw("<i class='fa fa-thumbs-o-up' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: true, id: @project.id}, class:(@project.user_vote(current_user) ? "upvoted" : ""), method: :post) %>
-    </li>
-    <li class="vote-btn-downvote">
-      <%= link_to(raw("<i class='fa fa-thumbs-o-down' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: false, id: @project.id}, class:( (!@project.user_vote(current_user).nil? && !@project.user_vote(current_user)) ? "downvoted" : ""), method: :post) %>
-    </li>
-  </ul>
-</div>
 <div class="vote-btn-group pull-right">
   <span class="vote-btn-upvote">
     <%= link_to(raw("<i class='fa fa-thumbs-o-up' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: true, id: @project.id}, class:(@project.user_vote(current_user) ? "upvoted" : ""), method: :post) %>
@@ -34,6 +24,22 @@
 
   <br>
   <br>
+
+  <% if !@project.politicians.empty? %>
+    <p>
+      <strong>Políticos Associados:</strong>
+      <% @project.politicians.each do |politician| %>
+        <p>
+          <%= politician.name %>
+           - 
+          <%= politician.number %>
+           - 
+          <%= politician.party %>
+        </p>
+      <% end %>
+    </p>
+    <br>
+  <% end %>
   
   <p>
     <strong>Cidade:</strong>
@@ -77,7 +83,11 @@
 
   <br>
 
-  <button type="button" id="show-details" class="btn btn-default">Mostrar detalhes do Design Thinking</button>
+  <% if admin_signed_in? %>
+    linkar políticos
+  <% else %>
+    <button type="button" id="show-details" class="btn btn-default">Mostrar detalhes do Design Thinking</button>
+  <% end %>
 
   <section id="details" class="hidden">
 

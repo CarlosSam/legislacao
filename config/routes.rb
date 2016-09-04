@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
   devise_for :admins
 
-  namespace :adm do
-    resources :politicians
-    get '/', to: 'politicians#index'
-  end
-
+  resources :politicians
+  
   devise_for :users
 
   get 'projects/welcome', to: 'projects#welcome'
   get 'projects/vote'
   post 'projects/vote', to: 'projects#do_vote'
+  get 'projects/:id/link_politicians/', to: 'projects#link_politicians'
   resources :projects
   
   # The priority is based upon order of creation: first created -> highest priority.

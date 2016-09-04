@@ -1,0 +1,37 @@
+<h1>Lista de Políticos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Número</th>
+      <th>Partido</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @politicians.each do |politician| %>
+      <tr>
+        <td><%= politician.name %></td>
+        <td><%= politician.number %></td>
+        <td><%= politician.party %></td>
+        <td><%= politician.email %></td>
+        <td>
+          <div class="btn-group pull-right">
+            <%= link_to 'Detalhes', politician, class: "btn btn-default btn-sm" %>
+            <%= link_to 'Editar', edit_politician_path(politician), class: "btn btn-default btn-sm" %>
+            <%= link_to 'Remover', politician, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-default btn-sm" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Político', new_politician_path, class: "btn btn-primary", style:"color:white;" %>
+
+<%= javascript_include_tag 'adm/politicians', 'data-turbolinks-track' => true %>

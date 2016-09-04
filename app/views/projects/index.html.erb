@@ -26,7 +26,11 @@
         <td><%= project.city %></td>
         <td><%= project.state %></td>
         <td><%= project.recipient %></td>
-        <td><%= link_to 'Mais detalhes', project, class: 'btn btn-sm btn-default' %></td>
+        <% if admin_signed_in? %>
+          <td><%= link_to 'Associar políticos', {controller: 'projects', action: 'link_politicians', id: project.id}, class: 'btn btn-sm btn-default' %></td>
+        <% else %>
+          <td><%= link_to 'Mais detalhes', project, class: 'btn btn-sm btn-default' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

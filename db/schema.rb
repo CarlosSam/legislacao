@@ -11,19 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903184703) do
+ActiveRecord::Schema.define(version: 20160904144525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "adm_politicians", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "number"
-    t.string   "party"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,6 +33,23 @@ ActiveRecord::Schema.define(version: 20160903184703) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "politicians", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "number"
+    t.string   "party"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "politicians_projects", id: false, force: :cascade do |t|
+    t.integer "politician_id"
+    t.integer "project_id"
+  end
+
+  add_index "politicians_projects", ["politician_id"], name: "index_politicians_projects_on_politician_id", using: :btree
+  add_index "politicians_projects", ["project_id"], name: "index_politicians_projects_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"

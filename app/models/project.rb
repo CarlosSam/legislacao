@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
 
+	has_and_belongs_to_many :politicians
+
 	def upvotes
 		Vote.where({project: self, status: true}).count(:all);
 	end
