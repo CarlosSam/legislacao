@@ -1,4 +1,7 @@
-<% if user_signed_in? %>
-	<h3>Prezado usuário <%= current_user.email %>, </h3>
-<% end %>
-<h1> Bem vindo ao Legislação </h1>
+<div class="centralize-elements">
+	<% if user_signed_in? %>
+		<h3>Prezado usuário <%= current_user.email %>, </h3>
+	<% end %>
+	<h1> Bem vindo ao Legislação </h1>
+	<%= image_tag("LOGO_OFICIAL.png") %>
+</div>

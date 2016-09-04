@@ -6,10 +6,23 @@ body {
   line-height: 18px;
 }
 
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section:last-of-type {
+  margin-bottom: 0;
 }
 
 pre {
@@ -79,6 +92,10 @@ div {
   border-radius: 4px;
   box-shadow: 0 0 1px rgba(0,0,0,0.2);
   position: relative;
+}
+
+.centralize-elements {
+  text-align: center;  
 }
 
 .vote-box {

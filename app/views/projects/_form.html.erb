@@ -11,55 +11,231 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label 'nome' %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label 'cidade' %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label 'estado' %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label 'destinatário' %><br>
-    <%= f.text_field :recipient %>
-  </div>
-  <div class="field">
-    <%= f.label 'queremos resolver o problema' %><br>
-    <%= f.text_area :wants %>
-  </div>
-  <div class="field">
-    <%= f.label 'fazendo' %><br>
-    <%= f.text_area :doing %>
-  </div>
-  <div class="field">
-    <%= f.label 'impactando em' %><br>
-    <%= f.text_area :impacts %>
-  </div>
-  <div class="field">
-    <%= f.label 'estratégia' %><br>
-    <%= f.text_area :strategy %>
-  </div>
-  <div class="field">
-    <%= f.label 'explorar' %><br>
-    <%= f.text_area :explore %>
-  </div>
-  <div class="field">
-    <%= f.label 'definir' %><br>
-    <%= f.text_area :define %>
-  </div>
-  <div class="field">
-    <%= f.label 'causas' %><br>
-    <%= f.text_area :causes %>
-  </div>
-  <div class="field">
-    <%= f.label 'prototipar' %><br>
-    <%= f.text_area :prototype %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'enviar', class: "btn btn-primary" %>
-  </div>
+  <section id="0">
+    <h3>Explicação</h3>
+    <p>
+    Para tornar a sua experiência de participação política mais divertida e sem mistérios nós do LegislAÇÃO adaptamos uma metodologia de resolução de problemas super atual e intuitiva chamada design thinking... Não se assuste que é fácil de entender.
+  
+    <p>
+    Esta metodologia é dividida em quatro fases:
+  
+    <p>
+    1. Explorar: identifique todos os problemas da sua cidade;
+    <p>
+    2. Definir: escolha o problema que mais te incomoda e conheça ele a fundo;
+    <p>
+    3. Prototipar: agora que já sabe tudo sobre seu problema, desenvolva algo que resolva o problema;
+    <p>
+    4. Entregar: estruture bem seu projeto para que ele saia do papel.
+    <p>
+    Ficou alguma dúvida ainda? Fica tranquilo que ao passo que você for avançando no desenvolvimento da sua solução explicaremos melhor cada uma das fases novamente.
+    <p>
+    <button type="button" class="btn btn-default">Continuar</button>
+  </section>
+
+  <section id="1" class="hidden">
+    <h3> 1 de 4: EXPLORAR:</h3>
+    <p>
+    Que legal que você já chegou até aqui :)
+
+    <p>
+    Nesta fase de exploração você listará alguns dos problemas que enxerga em sua cidade, muito fácil né?! No entanto tome um único cuidado: SEJA ESPECÍFICO. 
+    <br>Exemplo: falar que o problema são os buracos nas ruas não ajuda muito, pois pode ser qualquer rua, por outro lado se você falar que são os buracos nas ruas do centro da cidade você estará apontando exatamente onde mora o problema, isto facilitará muito a atividade da próxima fase. 
+    <br>Faça esta lista rapidamente sem pensar muito, dessa forma somente os problemas que mais te incomodam serão listados. O sugerido listar cerca de 5 problemas em no máximo 5 minutos.
+
+    <p>
+    AGORA É COM VOCÊ...
+    <br>
+    Questão #1: quais são os maiores desafios para a minha cidade?
+    <br>
+    Lembrando:
+    <br>
+    Seja específico;
+    <br>
+    Tempo máximo sugerido 5 minutos;
+    <br>
+    Exemplo: buraco nas ruas do centro da cidade.
+    <p>
+    <div class="field">
+      <%= f.label 'explorar' %><br>
+      <%= f.text_area :explore, placeholder: "quais são os maiores desafios para a minha cidade?", rows:"5", width:"100%" %>
+    </div>
+    <button type="button" class="btn btn-default">Continuar</button>
+  </section>
+
+  <section id="2" class="hidden">
+    <h3>2 de 4: DEFINIR</h3>
+    <p>
+    Muito bem!
+
+    <p>
+    Agora que listou os principais problemas da sua cidade, é hora de escolher um deles e entender a fundo como ele nasce.
+
+    <p>
+    Para te ajudar na escolha de um deles sugerimos três perguntinhas:
+
+    <p>
+    1. O quanto ele é compartilhado entre outras pessoas da sociedade, ou seja, ele impacta muita ou pouca gente?
+
+    <p>
+    2. O quanto ele desperta urgência emocional nas pessoas, ele te deixa muito irritado ou triste? 
+
+    <p>
+    3. O grau de viabilidade de intervenção, é possível resolver este problema facilmente?
+
+    <p>
+    Assim que escolher o problema que vai resolver é hora de buscar as causas dele. Isto é muito importante, pois a única forma de se eliminar efetivamente um problema é eliminando suas causas. É mais ou menos a lógica de cortar o mal pela raiz, sabe como?! Uma boa técnica para se identificar as causas de um problema é aplicar os 5 porquês, por exemplo:
+
+    <p>
+    - Por que existem buraco nas ruas do centro da cidade;
+
+    <p>
+    - Porque o asfalto quebra fácil.
+
+    <p>
+    - Por que o asfalto quebra fácil?
+
+    <p>
+    - Porque caminhões pesados passam por lá.
+
+    <p>
+    ... assim por diante até que se chegue a uma causa raiz.
+
+    <p>
+    *** Caso queira propor a solução para os outros problemas listados crie novos projetos assim que finalizar este :)
+
+    <p>
+    AGORA É COM VOCÊ...
+
+    <p>
+    Questão #2: qual dos problemas listados quero resolver?
+
+    <p>
+    Lembrando:
+
+    <p>
+    O quanto ele é compartilhado?
+
+    <p>
+    O quanto ele desperta urgência emocional nas pessoas?
+
+    <p>
+    Qual o grau de viabilidade de intervenção?
+
+    <p>
+    <div class="field">
+      <%= f.label 'definir' %><br>
+      <%= f.text_area :define, placeholder: "qual dos problemas listados quero resolver?", rows: 4 %>
+    </div>
+    <div class="field">
+      <%= f.label 'causas' %><br>
+      <%= f.text_area :causes, placeholder: "Quais são as causas deste problema?", rows: 4 %>
+    </div>
+    <button type="button" class="btn btn-default">Continuar</button>
+  </section>
+
+  <section id="3" class="hidden">
+    <h3>3 de 4: Prototipar</h3>
+    Show!! Você já passou por metade das fases.
+    <p>
+    Agora que já é um expert sobre o assunto que quer resolver é hora de inovar e criar algo que resolve este problema. Para isto temos algumas sugestões do que pode ser feito:
+    <p>
+    Projeto: esforço temporário realizado para criar um novo produto ou serviço.
+    <p>
+    Programa: um grupo de projetos relacionados gerenciados de modo coordenado para a obtenção de benefícios que não estariam disponíveis se fosse gerenciados individualmente.
+    <p>
+    Melhoria de serviço público já existente;
+    <p>
+    Estabelecimento de regras, por via de lei, para restringir ou possibilitar a ação de alguém ou de um grupo de pessoas.
+    <p>
+    Estas são só algumas sugestões. Voe na sua criatividade, mas não esqueça que sua solução precisa ser viável.
+    <p>
+    AGORA É COMO VOCÊ....
+    <p>
+    Questão #3: qual é a proposta de política pública para superar esse desafio?
+    <div class="field">
+      <%= f.label 'prototipar' %><br>
+      <%= f.text_area :prototype, placeholder: "qual é a proposta de política pública para superar esse desafio?", rows: 4 %>
+    </div>
+    <button type="button" class="btn btn-default">Continuar</button>
+  </section>
+
+  <section id="4" class="hidden">
+    <h3>4 de 4:  Entregar</h3>
+    Sensacional! Você chegou na última fase da criação.
+    <p>
+    O primeiro passo para finalizar sua proposta de política pública é dar um título a ela:
+    <div class="field">
+      <%= f.label 'nome' %><br>
+      <%= f.text_field :name %>
+    </div>
+    <p>
+    Resumidamente fale sobre seu projeto da seguinte forma:
+    <p>
+    QUEREMOS RESOLVER o problema de buracos nas ruas do centro da cidade FAZENDO um projeto para colocação de placas para limitar o peso dos caminhões IMPACTANDO EM: 1. Melhoria do trânsito; 2. Prevenindo acidentes; 3. Etc.
+    <p>
+    AGORA É COM VOCÊ...
+    <div class="field">
+      <%= f.label 'queremos resolver o problema' %><br>
+      <%= f.text_area :wants, rows: 4 %>
+    </div>
+    <div class="field">
+      <%= f.label 'fazendo' %><br>
+      <%= f.text_area :doing, rows: 4 %>
+    </div>
+    <div class="field">
+      <%= f.label 'impactando em' %><br>
+      <%= f.text_area :impacts, rows: 4 %>
+    </div>
+    Por fim, determine o destinatário do seu pedido.
+    <p>
+    Candidatos a vereador e a prefeito.
+    <p>
+    Tá em dúvida pra quem pode tirar do papel seu projeto? Lá vão duas dicas:
+    <p>
+    Vereador é o representante do cidadão a nível municipal. Ele é responsável por:
+    <p>
+    Criar, discutir e votar leis;
+    <p>
+    Fiscalizar o trabalho do executivo;
+    <p>
+    Indicar ao executivo necessidades de melhoria na cidade.
+    <p>
+    Prefeitos tem o dever de garantir os direitos e cobrar os deveres da população, por isto ficam a cargo do executivo realizar obras nas áreas de: saúde, educação, habitação, segurança, transporte e saneamento básico.
+    <p>
+    <div class="field">
+      <%= f.label 'destinatário' %><br>
+      <%= f.text_field :recipient %>
+    </div>
+    <div class="field">
+      <%= f.label 'cidade' %><br>
+      <%= f.text_field :city %>
+    </div>
+    <div class="field">
+      <%= f.label 'estado' %><br>
+      <%= f.text_field :state %>
+    </div>
+    <h4>Tire do Papel... Fale pro mundo</h4>
+    Parabéns por ser um cidadão participativo!
+    <p>
+    Seu projeto será postado em nosso portal para que mais pessoas conheçam e divulguem ele. Esperamos que em breve algum candidato a vereador e a prefeito se comprometa a tirar ele do papel, vamos trabalhar duro para que algum político leia seu projeto, no entanto caso queira acelerar este processo sugerimos quatro estratégias:
+    <p>
+    1. Petição pública: nada mais é um grande abaixo assinado de pessoas que querem a aprovação do seu projeto. Esta trabalho pode ser realizado manualmente ou ainda de forma online, como por exemplo no site www.peticaopublica.com.br
+    <p>
+    2. . Pressão direta: os melhores exemplos são passeatas e cartazes, no entanto existem várias formas online de fazer isto também. Exemplo disso é a panela de pressão rede nossas cidades;
+    <p>
+    3. Articulação: na prática trata-se de realizar uma reunião com um político para convencer ele dá relevância do seu projeto;
+    <p>
+    4. Imprensa: colocando sua ideia em grandes mídias é possível que um político insira seu projeto no lista de propostas dele.
+    <p>
+    <div class="field">
+      <%= f.label 'estratégia' %><br>
+      <%= f.text_area :strategy, rows: 4 %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'enviar', class: "btn btn-primary" %>
+    </div>
+  </section>
+
+  <%= javascript_include_tag 'projects', 'data-turbolinks-track' => true %>
 <% end %>
