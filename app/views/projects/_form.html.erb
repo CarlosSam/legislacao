@@ -166,7 +166,7 @@
     <p>
     O primeiro passo para finalizar sua proposta de política pública é dar um título a ela:
     <div class="field">
-      <%= f.label 'nome' %><br>
+      <%= f.label 'título' %><br>
       <%= f.text_field :name %>
     </div>
     <p>
@@ -205,7 +205,7 @@
     <p>
     <div class="field">
       <%= f.label 'destinatário' %><br>
-      <%= f.text_field :recipient %>
+      <%= f.select :recipient, options_for_select(br_recipients), {}, {class: 'form-control'} %>
     </div>
     <div class="field">
       <%= f.label 'cidade' %><br>
@@ -213,7 +213,7 @@
     </div>
     <div class="field">
       <%= f.label 'estado' %><br>
-      <%= f.text_field :state %>
+      <%= f.select :state, options_for_select(br_states_helper), {}, {class: 'form-control'} %>
     </div>
     <h4>Tire do Papel... Fale pro mundo</h4>
     Parabéns por ser um cidadão participativo!
