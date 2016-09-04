@@ -29,7 +29,7 @@ class Adm::PoliticiansController < ApplicationController
 
     respond_to do |format|
       if @adm_politician.save
-        format.html { redirect_to @adm_politician, notice: 'Politician was successfully created.' }
+        format.html { redirect_to @adm_politician, notice: 'Político criado com sucesso.' }
         format.json { render :show, status: :created, location: @adm_politician }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class Adm::PoliticiansController < ApplicationController
   def update
     respond_to do |format|
       if @adm_politician.update(adm_politician_params)
-        format.html { redirect_to @adm_politician, notice: 'Politician was successfully updated.' }
+        format.html { redirect_to @adm_politician, notice: 'Político atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @adm_politician }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class Adm::PoliticiansController < ApplicationController
   def destroy
     @adm_politician.destroy
     respond_to do |format|
-      format.html { redirect_to adm_politicians_url, notice: 'Politician was successfully destroyed.' }
+      format.html { redirect_to adm_politicians_url, notice: 'Político removido com sucesso.' }
       format.json { head :no_content }
     end
   end

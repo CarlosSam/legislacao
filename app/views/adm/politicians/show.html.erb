@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @adm_politician.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @adm_politician.name %>
-</p>
+<dl class="dl-horizontal">
 
-<p>
-  <strong>Number:</strong>
-  <%= @adm_politician.number %>
-</p>
+	<dt>
+		<strong>Número:</strong>
+	</dt>
+	<dd>
+		<%= @adm_politician.number %>
+	</dd>
+	
+	<dt>
+		<strong>Partido:</strong>
+	</dt>
+	<dd>
+		<%= @adm_politician.party %>
+	</dd>
+	
+	<dt>
+		<strong>Email:</strong>
+	</dt>
+	<dd>
+		<%= @adm_politician.email %>
+	</dd>
+	
+	<%= link_to 'Editar', edit_adm_politician_path(@adm_politician), class: "btn btn-default" %> 
 
-<p>
-  <strong>Party:</strong>
-  <%= @adm_politician.party %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @adm_politician.email %>
-</p>
-
-<%= link_to 'Edit', edit_adm_politician_path(@adm_politician) %> |
-<%= link_to 'Back', adm_politicians_path %>
+</dl>

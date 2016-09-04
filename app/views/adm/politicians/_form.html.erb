@@ -1,7 +1,7 @@
 <%= form_for(@adm_politician) do |f| %>
   <% if @adm_politician.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@adm_politician.errors.count, "error") %> prohibited this adm_politician from being saved:</h2>
+      <h2><%= pluralize(@adm_politician.errors.count, "error") %> impedi(u/ram) este político de ser alterado: </h2>
 
       <ul>
       <% @adm_politician.errors.full_messages.each do |message| %>
@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label "nome" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :number %><br>
+    <%= f.label "número" %><br>
     <%= f.number_field :number %>
   </div>
   <div class="field">
-    <%= f.label :party %><br>
+    <%= f.label "partido" %><br>
     <%= f.text_field :party %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label "email" %><br>
     <%= f.text_field :email %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'enviar', class: "btn btn-primary" %>
   </div>
 <% end %>
