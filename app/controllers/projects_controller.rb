@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.all.sort_by{|p| -p.netvotes}
   end
 
   # GET /projects/1

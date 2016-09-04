@@ -127,9 +127,19 @@ ul.vote-box__inline-list {
     height: 50px;
 }
 
+.table ul.vote-box__inline-list {
+  line-height: inherit;
+  height: inherit;
+}
+
 .vote-box__inline-list li {
     width: 45px;
     float: left;
+}
+
+.table .vote-box__inline-list li {
+    font-size: 1.5rem;
+    opacity: 0.75;
 }
 
 .vote-box__inline-list li i {
@@ -146,6 +156,11 @@ ul.vote-box__inline-list {
 
 span.total-votes {
     font-size: 4rem;
+}
+
+.table span.total-votes {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .project-contents {

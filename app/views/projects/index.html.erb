@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Votos</th>
       <th>Título</th>
       <th>Cidade</th>
       <th>Estado</th>
@@ -14,6 +15,13 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
+        <td>
+          <ul class="vote-box__inline-list">
+            <li><span class="total-votes"><%= project.netvotes %><span></li>
+            <li><%= project.upvotes %><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></li>
+            <li><%= project.downvotes %><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></li>
+          </ul>
+        </td>
         <td><%= project.name %></td>
         <td><%= project.city %></td>
         <td><%= project.state %></td>
