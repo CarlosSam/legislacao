@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy, :vote, :do_vote, :link_politicians]
-  before_action :authenticate_user!, except: [:welcome, :index, :show]
+  before_action :authenticate_user!, except: [:welcome, :index, :show, :link_politicians]
   before_action :authenticate_admin!, only: [:edit, :update, :destroy, :link_politicians]
 
   def welcome

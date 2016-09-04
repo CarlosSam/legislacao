@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       redirect_to projects_welcome_path
     elsif admin_signed_in?
-      redirect_to adm_politicians_path
+      redirect_to politicians_path
     else
       redirect_to projects_welcome_path
     end

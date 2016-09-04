@@ -75,7 +75,7 @@
   <% end %>
   <div class="field">
     <%= f.label 'Associar Políticos' %><br>
-    <%= f.select :recipient, options_for_select(br_recipients), {}, {class: 'form-control'} %>
+    <%= f.collection_check_boxes(:politician, :projects_id, Politician.all, :id, :name_with_initial) %>
   </div>
   <div class="actions">
     <%= f.submit 'enviar', class: "btn btn-primary" %>
