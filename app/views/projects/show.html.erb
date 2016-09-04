@@ -1,82 +1,123 @@
-<div class="vote-box">
+<div class="vote-box hidden">
   <ul class="vote-box__stacked-list">
     <li class="vote-btn-upvote">
       <%= link_to(raw("<i class='fa fa-thumbs-o-up' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: true, id: @project.id}, class:(@project.user_vote(current_user) ? "upvoted" : ""), method: :post) %>
-    </li>
-    <li>
-      <ul class="vote-box__inline-list">
-        <li><span class="total-votes"><%= @project.netvotes %><span></li>
-        <li><%= @project.upvotes %><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></li>
-        <li><%= @project.downvotes %><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></li>
-      </ul>
     </li>
     <li class="vote-btn-downvote">
       <%= link_to(raw("<i class='fa fa-thumbs-o-down' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: false, id: @project.id}, class:( (!@project.user_vote(current_user).nil? && !@project.user_vote(current_user)) ? "downvoted" : ""), method: :post) %>
     </li>
   </ul>
 </div>
-<div class="project-contents">
-  <p>
-    <strong>Name:</strong>
-    <%= @project.name %>
-  </p>
-  
-  <p>
-    <strong>City:</strong>
-    <%= @project.city %>
-  </p>
-  
-  <p>
-    <strong>State:</strong>
-    <%= @project.state %>
-  </p>
-  
-  <p>
-    <strong>Recipient:</strong>
-    <%= @project.recipient %>
-  </p>
-  
-  <p>
-    <strong>Wants:</strong>
-    <%= @project.wants %>
-  </p>
-  
-  <p>
-    <strong>Doing:</strong>
-    <%= @project.doing %>
-  </p>
-  
-  <p>
-    <strong>Impacts:</strong>
-    <%= @project.impacts %>
-  </p>
-  
-  <p>
-    <strong>Strategy:</strong>
-    <%= @project.strategy %>
-  </p>
-  
-  <p>
-    <strong>Explore:</strong>
-    <%= @project.explore %>
-  </p>
-
-  <p>
-    <strong>Define:</strong>
-    <%= @project.define %>
-  </p>
-  
-  <p>
-    <strong>Causes:</strong>
-    <%= @project.causes %>
-  </p>
-  
-  <p>
-    <strong>Prototype:</strong>
-    <%= @project.prototype %>
-  </p>
-  
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Back', projects_path %>
-
+<div class="vote-btn-group pull-right">
+  <span class="vote-btn-upvote">
+    <%= link_to(raw("<i class='fa fa-thumbs-o-up' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: true, id: @project.id}, class:(@project.user_vote(current_user) ? "upvoted" : ""), method: :post) %>
+  </span>
+  <span class="vote-btn-downvote">
+    <%= link_to(raw("<i class='fa fa-thumbs-o-down' aria-hidden='true'></i>"), {controller: 'projects', action: 'do_vote', outcome: false, id: @project.id}, class:( (!@project.user_vote(current_user).nil? && !@project.user_vote(current_user)) ? "downvoted" : ""), method: :post) %>
+  </span>
 </div>
+<div class="project-contents">
+  <h3><%= @project.name %></h3>
+
+  <hr>
+
+  <p>
+    <strong>Votos:</strong>
+    <p>
+      <ul class="vote-box__inline-list">
+        <li><span class="total-votes"><%= @project.netvotes %><span></li>
+        <li><%= @project.upvotes %><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></li>
+        <li><%= @project.downvotes %><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></li>
+      </ul>
+    </p>
+  </p>
+
+  <br>
+  <br>
+  
+  <p>
+    <strong>Cidade:</strong>
+    <%= simple_format @project.city %>
+  </p>
+
+  <br>
+  
+  <p>
+    <strong>Estado:</strong>
+    <%= simple_format @project.state %>
+  </p>
+    
+  <br>
+
+  <p>
+    <strong>Destinatário:</strong>
+    <%= simple_format @project.recipient %>
+  </p>
+
+  <br>
+  
+  <p>
+    <strong>Queremos resolver o problema:</strong>
+    <%= simple_format @project.wants %>
+  </p>
+
+  <br>
+  
+  <p>
+    <strong>Fazendo:</strong>
+    <%= simple_format @project.doing %>
+  </p>
+
+  <br>
+  
+  <p>
+    <strong>Impactando em:</strong>
+    <%= simple_format @project.impacts %>
+  </p>
+
+  <br>
+
+  <button type="button" id="show-details" class="btn btn-default">Mostrar detalhes do Design Thinking</button>
+
+  <section id="details" class="hidden">
+
+    <h4>Detalhes do Design Thinking</h4>
+
+    <p>
+      <strong>Explorar:</strong>
+      <%= simple_format @project.explore %>
+    </p>
+
+    <br>
+  
+    <p>
+      <strong>Definir:</strong>
+      <%= simple_format @project.define %>
+    </p>
+
+    <br>
+  
+    <p>
+      <strong>Causas:</strong>
+      <%= simple_format @project.causes %>
+    </p>
+
+    <br>
+  
+    <p>
+      <strong>Prototipar:</strong>
+      <%= simple_format @project.prototype %>
+    </p>
+
+    <br>
+  
+    <p>
+      <strong>Estratégia:</strong>
+      <%= simple_format @project.strategy %>
+    </p>
+
+  </section>
+  
+</div>
+
+<%= javascript_include_tag 'projects', 'data-turbolinks-track' => true %>

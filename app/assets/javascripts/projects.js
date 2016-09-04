@@ -13,3 +13,8 @@ $("#2 .btn").click(function(event){
 $("#3 .btn").click(function(event){
 	$("#4").removeClass("hidden");
 });
+
+$("#show-details").click(function(event){
+	$("#details").removeClass("hidden");
+	$("#show-details").addClass("hidden");
+});

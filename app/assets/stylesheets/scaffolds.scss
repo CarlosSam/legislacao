@@ -121,10 +121,7 @@ div {
 
 ul.vote-box__inline-list {
     list-style: none;
-    padding: 5px 0;
-    font-size: 3rem;
-    line-height: 40px;
-    height: 50px;
+    padding: 0;
 }
 
 .table ul.vote-box__inline-list {
@@ -143,7 +140,8 @@ ul.vote-box__inline-list {
 }
 
 .vote-box__inline-list li i {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    opacity: 0.75;
 }
 
 .vote-box__inline-list li:nth-child(2) {
@@ -155,7 +153,7 @@ ul.vote-box__inline-list {
 }
 
 span.total-votes {
-    font-size: 4rem;
+    font-size: 1.5rem;
 }
 
 .table span.total-votes {
@@ -163,15 +161,11 @@ span.total-votes {
     font-weight: bold;
 }
 
-.project-contents {
-    margin-left: 205px;
-}
-
-li.vote-btn-upvote i {
+.vote-btn-upvote .fa {
     color: hsla(120,100%,25%,0.5);
 }
 
-li.vote-btn-downvote i {  
+.vote-btn-downvote .fa {  
   color: hsla(0,100%,50%,0.5);
 }
 
